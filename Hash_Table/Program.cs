@@ -10,12 +10,12 @@ namespace Hash_Table
     {
         static void Main(string[] args)
         {
-            HashTable<int> ht = new HashTable<int>(5);
+            BadHashTable<int> ht = new BadHashTable<int>(5);
             ht.Add(1);
             ht.Add(9492);
             ht.Add(777);
 
-            ht.Search(61);
+            ht.Search(61); 
             ht.Search(184);
             ht.Search(777);
 

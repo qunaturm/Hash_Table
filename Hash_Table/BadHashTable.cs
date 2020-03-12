@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Hash_Table
 {
-    public class HashTable<T>
+    public class BadHashTable<T>
     {
         private T[] items;
-        public HashTable(int size)
+        public BadHashTable(int size)
         {
             if (size > 0)
             {
@@ -17,7 +17,7 @@ namespace Hash_Table
             }
         }
 
-        public void Add(T item)
+        public void Add(T item) 
         {
             int key = GetHash(item);
             items[key] = item;
