@@ -10,14 +10,16 @@ namespace Hash_Table
     {
         static void Main(string[] args)
         {
-            BadHashTable<int> ht = new BadHashTable<int>(5);
-            ht.Add(1);
-            ht.Add(9492);
-            ht.Add(777);
+            var ht = new HashTable<int, int>(10);
+            int a = 123;
+            ht.Add(a.GetHashCode(), a);
+            a = 333;
+            ht.Add(a.GetHashCode(), a);
+            int b = 124;
+            int c = 333;
+            ht.Search(b.GetHashCode(), b);
+            ht.Search(c.GetHashCode(), c); 
 
-            ht.Search(61); 
-            ht.Search(184);
-            ht.Search(777);
 
             Console.ReadLine();
         }
