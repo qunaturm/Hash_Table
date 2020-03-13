@@ -18,8 +18,15 @@ namespace Hash_Table
             int b = 124;
             int c = 333;
             ht.Search(b.GetHashCode(), b);
-            ht.Search(c.GetHashCode(), c); 
+            ht.Search(c.GetHashCode(), c);
 
+            var hts = new HashTable<int, string>(10);
+            hts.Add(5, "hello");
+            hts.Add(13, "i want to die");
+            hts.Add(99, "jopa");
+
+            hts.Search("ttt".GetHashCode(), "ttt");
+            hts.Search("i want to die".GetHashCode(), "i want to die");
 
             Console.ReadLine();
         }
