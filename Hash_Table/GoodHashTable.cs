@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +23,24 @@ namespace Hash_Table
             items[key].Nodes.Add(item); 
         }
 
+        public void Dell(T item)
+        {
+            var key = GetHash(item);
+        }
         public int GetHash(T item)
         {
             return item.GetHashCode() % items.Length;
+        }
+        public IEnumerator GetEnumerator(int max)
+        {
+            if (max < items.Length)
+            {
+                for (int i = 0; i < max; ++i)
+                {
+                    if (i == max) yield break;
+                    else yield return items[i];
+                }
+            }
         }
     }
 }

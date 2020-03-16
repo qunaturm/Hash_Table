@@ -12,18 +12,18 @@ namespace Hash_Table
         {
             var ht = new HashTable<int, int>(10);
             int a = 123;
-            ht.Add(a.GetHashCode(), a);
+            ht.AddItem(a.GetHashCode(), a);
             a = 333;
-            ht.Add(a.GetHashCode(), a);
+            ht.AddItem(a.GetHashCode(), a);
             int b = 124;
             int c = 333;
             ht.Search(b.GetHashCode(), b);
             ht.Search(c.GetHashCode(), c);
 
             var hts = new HashTable<int, string>(10);
-            hts.Add(5, "hello");
-            hts.Add(13, "i want to die");
-            hts.Add(99, "jopa");
+            hts.AddItem(5, "hello");
+            hts.AddItem(13, "i want to die");
+            hts.AddItem(99, "jopa");
 
             hts.Search("ttt".GetHashCode(), "ttt");
             hts.Search("i want to die".GetHashCode(), "i want to die");

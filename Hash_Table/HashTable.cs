@@ -17,7 +17,7 @@ namespace Hash_Table
             }
         }
 
-        public void Add(TKey key, TValue value)
+        public void AddItem(TKey key, TValue value)
         {
             var k = GetHash(key);
             if (items[k] == null)
