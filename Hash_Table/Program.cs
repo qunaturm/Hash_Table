@@ -10,23 +10,19 @@ namespace Hash_Table
     {
         static void Main(string[] args)
         {
-            var ht = new HashTable<int, int>(10);
-            int a = 123;
-            ht.AddItem(a.GetHashCode(), a);
-            a = 333;
-            ht.AddItem(a.GetHashCode(), a);
-            int b = 124;
-            int c = 333;
-            ht.Search(b.GetHashCode(), b);
-            ht.Search(c.GetHashCode(), c);
+            var ht = new GoodHashTable<Person>(10);
+            var p1 = new Person { Name = "Ivan", Age = 25, Country = "Russia" };
+            var p2 = new Person { Name = "Jon", Age = 32, Country = "England" };
+            var p3 = new Person { Name = "Bob", Age = 41, Country = "China" };
 
-            var hts = new HashTable<int, string>(10);
-            hts.AddItem(5, "hello");
-            hts.AddItem(13, "i want to die");
-            hts.AddItem(99, "jopa");
 
-            hts.Search("ttt".GetHashCode(), "ttt");
-            hts.Search("i want to die".GetHashCode(), "i want to die");
+            ht.AddItem(p1);
+            ht.AddItem(p2);
+
+            ht.Search(p1);
+            ht.Search(p3);
+
+            Console.WriteLine(Environment.NewLine);
 
             Console.ReadLine();
         }
